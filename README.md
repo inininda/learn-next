@@ -34,3 +34,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+## Additional Notes
+- RSC (React Server Component)
+
+- Server Components
+- By Default Next.js treats all components as Server components. This component can perform server-side tasks like reading files or fetching data directly from a database.
+
+- Client Components
+- Add "use client" directive at the top of the component file. This component cant perform server side tasks like reading files, they can use hooks and handle user interactions.
+
+## Routing conventions
+- 1. All routes must live inside the app folder
+- 2. Route files must be named either app.js or app.tsx
+- 3. Each folder represents a segment of the URL path
+- 4. Route directly tied to the folder. For example app/about will create /about url
+- 5. Nested routes `[slug]` for dynamic routing
+
+## Component function
+- you can use async on the component `export default async function MyComponent(){}`
