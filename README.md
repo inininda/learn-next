@@ -66,3 +66,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Private folder
 - the folder and all its subfolders are excluded from routing
 - Add an undescore at the start of the folder name
+
+## Route group
+- to group folder into common keyword for them. For example login, register and forgot password into auth folder.
+- to do it, wrap the group name using () example: (auth) then the url will work normally like /login, /register etc.
+- you can do nest route group
