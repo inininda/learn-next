@@ -71,3 +71,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - to group folder into common keyword for them. For example login, register and forgot password into auth folder.
 - to do it, wrap the group name using () example: (auth) then the url will work normally like /login, /register etc.
 - you can do nest route group
+
+## layout
+- default export a react component from layout.jsx or layout.tsx
+- the component takes a children prop, which next.js will populate with your page content
+- every next js appplicatin will need to have at least 1 layout
+- layout can be define per page example: /app/docs/layout.tsx. This layout only for docs page
+- multiple root layout, utilize root group, group the coresponding pages and then add layout.tsx inside each route group
