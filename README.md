@@ -57,3 +57,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Component function
 - you can use async on the component `export default async function MyComponent(){}`
 
+## Not Found Page
+- To add not found page add not-found.tsx to the src/app folder
+- It can be trigger inside the page (e.g: look at the example inside /blog/[id])
+- You can create file for not found per page (e.g src/app/docs/not-found.tsx)
+- not found page doesnt accept props, to share data to the not found page use "usePathname" from next/navigation (can only work for not-found client component)
