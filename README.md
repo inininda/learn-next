@@ -62,3 +62,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - It can be trigger inside the page (e.g: look at the example inside /blog/[id])
 - You can create file for not found per page (e.g src/app/docs/not-found.tsx)
 - not found page doesnt accept props, to share data to the not found page use "usePathname" from next/navigation (can only work for not-found client component)
+
+## Private folder
+- the folder and all its subfolders are excluded from routing
+- Add an undescore at the start of the folder name
