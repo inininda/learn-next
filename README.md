@@ -52,6 +52,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - 3. Each folder represents a segment of the URL path
 - 4. Route directly tied to the folder. For example app/about will create /about url
 - 5. Nested routes `[slug]` for dynamic routing
+- 6. Catch all segments withiut the index of the page `[...slug]`. To include the index for the page (e.g /docs) use `[[...slug]]`
 
 ## Component function
 - you can use async on the component `export default async function MyComponent(){}`
+
