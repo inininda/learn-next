@@ -78,3 +78,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - every next js appplicatin will need to have at least 1 layout
 - layout can be define per page example: /app/docs/layout.tsx. This layout only for docs page
 - multiple root layout, utilize root group, group the coresponding pages and then add layout.tsx inside each route group
+
+# Metadata
+- handle metadata in layout.tsx (apply to all its pages) or page.tsx (specific to that page). 
+- export static metadata object or export a dynamic generateMetadata function
+- multiple metadata places in a route will be merged together where page metadata overriding layout metadata for matching properties
+- only server compnent can use metadata
+- title metadata has 3 type 
+`
+title : {
+    default: "Default title" -> as fallback
+    template: "%s | Ninda Site" -> If you want to use template like prefix for the title
+    absolute: "" -> if you want to distinct from parent property, this will enforce title
+}
+`
