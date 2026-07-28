@@ -96,3 +96,9 @@ title : {
 ## Navigation
 - use Link from "next/link"
 - styling active link see (auth)
+- params is a promise that resolves to an object containing the dynamic route paameter (e.g id)
+- searchParams is a promise that resolves to an object containing the query parameters (e.g sorting and filters) *check /products
+- To make search params work in client component use "use" hook from react check check /products/product-1
+- layout.tsx only has access to params
+- Navigating programatically use useRouter. See /(marketing)/order-products. You can use replace (to erase the history) or push (to persist history, can use back button)
+- For Server component can use redirect from next/navigation

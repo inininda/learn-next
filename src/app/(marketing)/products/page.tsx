@@ -18,6 +18,17 @@ export default function ProductList() {
         <li>
           <Link href={`/products/product-${productId}`}>Product 100</Link>
         </li>
+        <li>
+          <Link href={`/products/product-with-searchParam?lang=en`}>
+            Product With Search Param
+          </Link>
+        </li>
+
+        <li>
+          <Link href={`/products/product-1?lang=en`}>
+            Product One With Search Param
+          </Link>
+        </li>
       </ul>
     </>
   );
