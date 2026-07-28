@@ -102,3 +102,9 @@ title : {
 - layout.tsx only has access to params
 - Navigating programatically use useRouter. See /(marketing)/order-products. You can use replace (to erase the history) or push (to persist history, can use back button)
 - For Server component can use redirect from next/navigation
+
+## Templates
+- next preserve the value for common component.
+- Template are similar to layout where UI is shared between multiple pages but instead of preserve value, templates will fresh start when you navigate across pages
+- export default React component from template.js or template.tsx, check (auth)
+- you can use both template and layout at the same time. Layout will render first and the children will be replace by template

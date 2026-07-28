@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import AuthNav from "./auth-nav";
+import AuthInput from "./auth-input";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,16 +13,12 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <header style={{ backgroundColor: "lightblue", padding: "1rem" }}>
-          <AuthNav />
-        </header>
-        {children}
-        <footer style={{ backgroundColor: "red", padding: "1rem" }}>
-          Footer
-        </footer>
-      </body>
-    </html>
+    <>
+      <div style={{ backgroundColor: "lightblue", padding: "1rem" }}>
+        <AuthNav />
+        <AuthInput />
+      </div>
+      {children}
+    </>
   );
 }
