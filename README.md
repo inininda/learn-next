@@ -85,10 +85,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - multiple metadata places in a route will be merged together where page metadata overriding layout metadata for matching properties
 - only server compnent can use metadata
 - title metadata has 3 type 
-`
+```
 title : {
     default: "Default title" -> as fallback
     template: "%s | Ninda Site" -> If you want to use template like prefix for the title
     absolute: "" -> if you want to distinct from parent property, this will enforce title
 }
-`
+```
+
+## Navigation
+- use Link from "next/link"
+- styling active link see (auth)

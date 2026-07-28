@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import AuthNav from "./auth-nav";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,7 @@ export default function AuthLayout({
     <html lang="en">
       <body>
         <header style={{ backgroundColor: "lightblue", padding: "1rem" }}>
-          Header
+          <AuthNav />
         </header>
         {children}
         <footer style={{ backgroundColor: "red", padding: "1rem" }}>
