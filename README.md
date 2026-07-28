@@ -108,3 +108,6 @@ title : {
 - Template are similar to layout where UI is shared between multiple pages but instead of preserve value, templates will fresh start when you navigate across pages
 - export default React component from template.js or template.tsx, check (auth)
 - you can use both template and layout at the same time. Layout will render first and the children will be replace by template
+
+## Loading UI
+- create loading.tsx or. loading.js per page or inside /app
