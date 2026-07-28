@@ -111,3 +111,11 @@ title : {
 
 ## Loading UI
 - create loading.tsx or. loading.js per page or inside /app
+
+# Error handling UI
+- create error.tsx or error.js per page or inside /app
+- check example in /products/error.tsx
+- route will find the closest error boundary
+- The error boundary wont ctach errors thrown in layout within the same segment. It will search the higher position error boundary
+- check https://nextjs.org/docs/app/getting-started/error-handling for more detail
+- to catch global error using global-error.tsx in /app folder, global error is the highest level error handling. Works only on production mode and requires htmll and body tags to be rendered.
