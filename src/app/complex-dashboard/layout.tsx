@@ -1,17 +1,24 @@
-import Notifications from "./@notifications/page";
-import Users from "./@users/page";
-import Revenue from "./@revenue/page";
 export default function ComplexDashboardLayout({
   children,
+  users,
+  revenue,
+  notifications,
 }: {
   children: React.ReactNode;
+  users: React.ReactNode;
+  revenue: React.ReactNode;
+  notifications: React.ReactNode;
 }) {
   return (
     <>
       <div>{children}</div>
-      <Users />
-      <Revenue />
-      <Notifications />
+      <div className="flex">
+        <div className="flex flex-col">
+          <div>{users}</div>
+          <div>{revenue}</div>
+        </div>
+        <div className="flex flex-1">{notifications}</div>
+      </div>
     </>
   );
 }

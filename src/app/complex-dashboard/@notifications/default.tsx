@@ -1,7 +1,7 @@
 import { Card } from "@/components/card";
 import Link from "next/link";
 
-export default function Notifications() {
+export default function NotificationsDefault() {
   return (
     <Card>
       <div>Notification page</div>

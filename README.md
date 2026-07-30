@@ -142,5 +142,5 @@ title : {
 - feature of parallel routing: 
     - independent route handling. Each slot can handle its own loading and error states
     - sub-navigation in routes. slots can function as a mini-application, complete with its own navigation and state management. users can interact with each section seperately like applying filters, sorting data or navigation through pages without affecting other parts. 
-
-
+- unmatched slots handle
+    - add default.tsx to the slots see "complex-dashboard"
