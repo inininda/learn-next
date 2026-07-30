@@ -160,3 +160,4 @@ title : {
   - to intercept the segment one level above use (..) (\*see f3 example inside f1 page)
   - to intercept the segment two level above use (..)(..) (\*see f4 example inside f2 page)
   - (...) to match segments from the root app directory (\*see F5 example from src/app/f1/f2/inner-f2)
+  - Parallel intercepting see example in src/app/photo-feed
