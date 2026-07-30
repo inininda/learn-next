@@ -139,8 +139,24 @@ title : {
 - each defined slot automatically becomes a prop in its coresponding `layout.tsx`
 - slot cant be access like a page for example /complex-dashboard/notifications (This doesnt work)
 - slots is used in Dashboard with multiple sections, split views, multi-pane layout, complex admin interfaces
-- feature of parallel routing: 
-    - independent route handling. Each slot can handle its own loading and error states
-    - sub-navigation in routes. slots can function as a mini-application, complete with its own navigation and state management. users can interact with each section seperately like applying filters, sorting data or navigation through pages without affecting other parts. 
+- feature of parallel routing:
+  - independent route handling. Each slot can handle its own loading and error states
+  - sub-navigation in routes. slots can function as a mini-application, complete with its own navigation and state management. users can interact with each section seperately like applying filters, sorting data or navigation through pages without affecting other parts.
 - unmatched slots handle
-    - add default.tsx to the slots see "complex-dashboard"
+  - add default.tsx to the slots see "complex-dashboard"
+
+# Conditional routes
+
+- check src/app/complex-dashboard/layout.tsx
+
+# Intercepting routes
+
+- allows you to load a route from another part of your application within the current layout.
+- useful to display new content while keeping the user in the same context
+- ex: src/app/f1
+  - F1 is source folder
+  - F2 is the target folder
+  - to intercepted F2 when access it from F1, we create folder (.)f2 at the same level as f2
+  - to intercept the segment one level above use (..) (\*see f3 example inside f1 page)
+  - to intercept the segment two level above use (..)(..) (\*see f4 example inside f2 page)
+  - (...) to match segments from the root app directory (\*see F5 example from src/app/f1/f2/inner-f2)
