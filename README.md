@@ -161,3 +161,13 @@ title : {
   - to intercept the segment two level above use (..)(..) (\*see f4 example inside f2 page)
   - (...) to match segments from the root app directory (\*see F5 example from src/app/f1/f2/inner-f2)
   - Parallel intercepting see example in src/app/photo-feed
+
+# Route Handlers
+
+- Check app/hello and app/comments for demo How to use GET, POST, etc requests
+- it can act like page.tsx.
+- If there is page.tsx and route.ts at the same folder, route.ts will be prioritize. To prevent this put route.ts in sub folder for exmple api folder inside the main folder.
+- When request is not available, next js will return 405 Method not allowed
+- Dynamic route handler:
+  - see app/comments/[id] for example for params
+  - see app/comments GET for example for query params
