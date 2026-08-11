@@ -200,3 +200,8 @@ title : {
 - you can re-validate data to retrieve the latest data
 - caching only work for GET method
 - if dynamic functions like headers() and cookies() or working with the request object in GET methood, caching wont be applied.
+
+# Middleware in route handler
+- intercept and control the flow of the requests and responses throughout your application. 
+- it does this at global level and enhancing features like redirects, URL rewrites, authentication, headers, cookies and more. 
+- To add middleware just simply create middleware.ts in src folder. `src/middleware.ts` for example
