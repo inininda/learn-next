@@ -189,3 +189,6 @@ title : {
   - Handling personalization (such as user preferences and themes)
   - tracking (like recording and analyzing user behavior)
 - `(check src/app/profile/api/route.ts for example)`
+
+# Handling redirect in route handler
+- To redirect user from one endpoint to the other we can use `redirect` from next/navigation. Check `src/app/users/api/route.ts` for example.
