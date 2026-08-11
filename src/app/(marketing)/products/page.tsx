@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-function getRandomInt(count: number) {
+/*function getRandomInt(count: number) {
   return Math.floor(Math.random() * count);
-}
+}*/
 
 export default function ProductList() {
-  const randomIint = getRandomInt(2);
+  //const randomIint = getRandomInt(2);
 
-  if (randomIint === 1) {
+  /*if (randomIint === 1) {
     throw new Error("Error random");
-  }
+  }*/
   const productId = 100;
   return (
     <>

@@ -192,3 +192,11 @@ title : {
 
 # Handling redirect in route handler
 - To redirect user from one endpoint to the other we can use `redirect` from next/navigation. Check `src/app/users/api/route.ts` for example.
+
+# Caching in route handler
+- by default the next js is using caching.
+- but to force caching we can use example in `src/app/time/route.ts`
+- during development there is no caching, so you have to build the app first.
+- you can re-validate data to retrieve the latest data
+- caching only work for GET method
+- if dynamic functions like headers() and cookies() or working with the request object in GET methood, caching wont be applied.
