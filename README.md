@@ -171,3 +171,21 @@ title : {
 - Dynamic route handler:
   - see app/comments/[id] for example for params
   - see app/comments GET for example for query params
+
+# Route Handler Headers
+
+- metadata associated with an API request and response
+  - Request headers
+    - Sent by client to the server and has essential information about the request `(check src/app/profile/api/route.ts for example)`
+  - Response headers
+    - sent from server to cient and has information about the server and the data being sent to the response `(check src/app/profile/api/route.ts for example)`
+
+# Cookie in route handlers
+
+- Small pieces of data that a server sends to a user's web browser
+- The browser can store the cookies and send them back to the same server with future requests
+- Main purposes:
+  - Managing sessions (like user logins and shopping carts)
+  - Handling personalization (such as user preferences and themes)
+  - tracking (like recording and analyzing user behavior)
+- `(check src/app/profile/api/route.ts for example)`
