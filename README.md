@@ -191,9 +191,11 @@ title : {
 - `(check src/app/profile/api/route.ts for example)`
 
 # Handling redirect in route handler
+
 - To redirect user from one endpoint to the other we can use `redirect` from next/navigation. Check `src/app/users/api/route.ts` for example.
 
 # Caching in route handler
+
 - by default the next js is using caching.
 - but to force caching we can use example in `src/app/time/route.ts`
 - during development there is no caching, so you have to build the app first.
@@ -202,6 +204,94 @@ title : {
 - if dynamic functions like headers() and cookies() or working with the request object in GET methood, caching wont be applied.
 
 # Middleware in route handler
-- intercept and control the flow of the requests and responses throughout your application. 
-- it does this at global level and enhancing features like redirects, URL rewrites, authentication, headers, cookies and more. 
+
+- intercept and control the flow of the requests and responses throughout your application.
+- it does this at global level and enhancing features like redirects, URL rewrites, authentication, headers, cookies and more.
 - To add middleware just simply create middleware.ts in src folder. `src/middleware.ts` for example
+
+# Rendering
+
+- process of transforming the component code into user interfaces that they can see and interact with.
+- The concept is included:
+  - CSR (client side rendering)
+    - Browser transform react component into what you see on screen.
+    - Popular in single page applications
+    - Drawback of CSR:
+      - SEO -> CSR is not great for search engines as when search engine fetch your site, it's mainly empty div. If there are lots of nested components making API calls, the meaningful content might load too slowly for search engines to even ctach it.
+      - Performance -> browser has to do everything like fetch data, build the UI, make everything interactive. When we add new features, the javascript bundle gets bigger making user wait even longer.
+
+  - Server side solutions
+    - search engine can easily index the server-rendered content.
+    - user can see the actual HTML content rightaway instead of staring at a blank screen or loading spinner.
+    - Hydration
+      - React takes control in the browser and reconstruct the component tree in memory, using the server-rendered HTML as blueprint.
+      - it carefully maps out where all the interactive elements should go, then hooks up the javascript logic.
+    - Types:
+      - SSG (Static site Generation)
+        - happens during build time when you deploy your application to the server.
+        - pages already rendered and ready to serve.
+        - Perfect for content that stays relatively stable, like blog posts.
+      - SSR (Server Side rendering)
+        - Render pages on-demand when user request them.
+        - Ideal for personalized content like social media feeds where the HTML changes based on who's logged in.
+    - Drawbacks:
+      - You have to fetch everything before you can show anything
+        - server must finish collecting all necessary data before any part of the page can be sent to client.
+      - You have to load everything before you can hydrate anything
+      - You have to hydrate everything before you can interact with anything
+    - Suspense SSR Architecture
+      - user the <Suspense> component to unlock:
+        - HTML streaming on the server.
+        - Selective hydration on the client.
+        - You dont have to fetch everything before you can shouw anything. We can use suspense with spinner when data is still being fetched.
+        - Code splitting
+          - Split some code into seperate scriot
+          - Using `React.lazy` for code splitting.
+          - Example
+          ```bash
+          import {lazy} from "react"
+          const MainContent = lazy(() => import('./mainContent.js'))
+
+          <Suspense fallback={<Spinner />}>
+            <MainContent />
+          </Suspense>
+
+          ```
+
+  - RSCs
+    - The architecture introduces a dual-component model: 
+      - Client Components
+        - They are timpically rendered on the client-side (CSR) but they can also rebndered on the server (SSR), allowing users to immediately see the page's HTML content rather than a blank screen.
+        - have full access to the client environment, such as browser, allowing them to use state, effects, and event listeners for handling interactivity.
+        - can also access browser APIs like geolocation and localStorage.
+        - use `"use client"` to declare a component is client component
+        - When component is load directly (without navigating from other page or component), the component is rendered in the server to allow user to immediately see the html content of the page. This is why if there is console in the component it will appear in the browser and also in the terminal.
+
+      - Server Components
+        - Designed to operate exclusively on the server.
+        - unlike client components, their code stays on the server and is never downloaded to the client.
+        - benefits:
+          - smaller bundle sizes
+          - direct access to server-side resources
+          - enhanced security
+          - imporoved data fetching
+          - caching
+          - faster initial page load and first contentful paint
+          - improved SEO
+          - efficient streaming
+    - By default, Next js component is a server component.
+
+
+# RSC Rendering lifecycle
+- Browser request to the server -> Next js app router then match the url to the server components -> next js then instruct react to render server components -> React then render the server components and all the children, converting them into special json format known as RSC payload. React also prepare the client component instructions. -> Next js then take the RSC payload and also the client component instructions to generate HTML -> This HTML is stream to the browser right away, giving user a NON-interactive UI preview, At the same time NEXT js also stream the RSC payload, -> Then browser progressively render UI based on the streamed HTML and RSC payload -> The Final UI is shown to the user. -> Client component then undergo hydration transforming from static display into interactive display. 
+- During the update flow, after react render server component, its children and also ckient component instructions, RSC payload then is streamed to the browser and triggering rout re-render. -> React then carefully reconcile or merger the new render output and updated the UI. 
+
+# Static Rendering
+- server rendering strategy where we generate HTML pages when building our application
+- perfect for blog posts, e-commerce product listings, documentation and marketing pages
+- How to do it: 
+  - this is the default strategy in the app router
+  - all routes are automatically prepared at build time without any additional setup. 
+
+
+
